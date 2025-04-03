@@ -1,37 +1,59 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# Backend To Do App
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+![GitHub repo size](https://img.shields.io/github/repo-size/gabrielbrandaosales/todo-app-backend?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/gabrielbrandaosales/todo-app-backend?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/gabrielbrandaosales/todo-app-backend?style=for-the-badge)
+<!--![Bitbucket open issues](https://img.shields.io/bitbucket/issues/gabrielbrandaosales/todo-app-backend?style=for-the-badge)
+![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/gabrielbrandaosales/todo-app-backend?style=for-the-badge)-->
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+<a href='http://gabrielbrandao.vercel.app' target="_blank">
+<!-- <img src="/public/site-image.png" alt="Exemplo imagem"> -->
+</a>  
+> Este é um backend para uma aplicação de gerenciamento de tarefas (To-Do), desenvolvido com NestJS, TypeORRM e MariaDB. A API permite criar, listar, atualizar e excluir tarefas, oferecendo autenticação e persistência de dados.
 
-## Description
+### Recursos principais:
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+- CRUD completo de tarefas
 
-## Project setup
+- Autenticação e autorização de usuários
+
+- Persistência de dados em banco de dados
+
+- Documentação da API com Swagger 
+
+### Ajustes e melhorias
+
+O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
+
+- [x] Criar projeto NestJS
+- [x] Instalar e configurar TypeORM
+- [x] Configurar ENVS
+- [ ] Criar modulo ToDo
+- [ ] Criar entidade ToDo
+- [ ] CRUD ToDo
+- [ ] Criar Documentação Swagger
+
+## 💻 Pré-requisitos
+
+Antes de começar, verifique se você atendeu aos seguintes requisitos:
+
+- Você instalou a versão mais recente de `<Node v18.18.0>`
+- Você tem uma máquina `<Windows>`.
+- Você leu `https://github.com/nestjs/nest`. 
+
+## 🚀 Instalando todo-app-backend
+
+Para instalar o todo-app-backend, siga estas etapas:
+
+## Configuração do projeto
 
 ```bash
 $ npm install
 ```
 
-## Compile and run the project
+## ☕ Compilar e iniciar o projeto 
+
+Para usar todo-app-backend, siga estas etapas:
 
 ```bash
 # development
@@ -44,7 +66,9 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Run tests
+## ✅ Executar testes 
+
+Para executar os testes, siga estas etapas:
 
 ```bash
 # unit tests
@@ -57,42 +81,61 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Deployment
+## 📫 Contribuindo para todo-app-backend
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+Para contribuir com todo-app-backend, siga estas etapas:
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+1. Bifurque este repositório.
+2. Crie um branch: `git checkout -b main`.
+3. Faça suas alterações e confirme-as: `git commit -m '<mensagem_commit>'`
+4. Envie para o branch original: `git push origin todo-app-backend / <local>`
+5. Crie a solicitação de pull.
 
-```bash
-$ npm install -g mau
-$ mau deploy
-```
+Como alternativa, consulte a documentação do GitHub em [como criar uma solicitação pull](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+<!--## 🤝 Colaboradores
 
-## Resources
+Agradecemos às seguintes pessoas que contribuíram para este projeto:
 
-Check out a few resources that may come in handy when working with NestJS:
+<table>
+  <tr>
+    <td align="center">
+      <a href="#" title="defina o titulo do link">
+        <img src="https://avatars3.githubusercontent.com/u/31936044" width="100px;" alt="Foto do Iuri Silva no GitHub"/><br>
+        <sub>
+          <b>Iuri Silva</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="#" title="defina o titulo do link">
+        <img src="https://s2.glbimg.com/FUcw2usZfSTL6yCCGj3L3v3SpJ8=/smart/e.glbimg.com/og/ed/f/original/2019/04/25/zuckerberg_podcast.jpg" width="100px;" alt="Foto do Mark Zuckerberg"/><br>
+        <sub>
+          <b>Mark Zuckerberg</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="#" title="defina o titulo do link">
+        <img src="https://miro.medium.com/max/360/0*1SkS3mSorArvY9kS.jpg" width="100px;" alt="Foto do Steve Jobs"/><br>
+        <sub>
+          <b>Steve Jobs</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table> -->
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+## 🧑 Author
 
-## Support
+<img src='https://github.com/gabrielbrandaosales.png' alt='Foto do autor' width='100px'/>
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+<sub>Gabriel Brandão</sub> 
 
-## Stay in touch
+## 😄 Seja um dos contribuidores
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+Quer fazer parte desse projeto? Clique [AQUI](CONTRIBUTING.md) e leia como contribuir. 
 
-## License
+## 📝 Licença
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE.md) para mais detalhes.
