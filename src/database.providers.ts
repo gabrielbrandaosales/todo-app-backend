@@ -10,7 +10,7 @@ export const databaseProviders = [
         port: 3306,
         username: 'root',
         password: '123',
-        database: 'todo',
+        database: 'todo_database',
         entities: [__dirname + '/../**/*.entity{.ts,.js}'],
         synchronize: true,
       });

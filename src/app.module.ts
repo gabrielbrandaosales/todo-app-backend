@@ -14,9 +14,9 @@ import { TodoModule } from './app/todo/todo.module';
         port: Number(configService.get('DB_PORT', 3306)),
         username: configService.get('DB_USERNAME', 'root'),
         password: configService.get('DB_PASSWORD', '123'),
-        database: configService.get('DB_DATABASE', 'todo'),
-        entities: [],
+        database: configService.get('DB_DATABASE', 'todo_database'),
         autoLoadEntities: true,
+        entities: [__dirname + '/**/*.entity{.js,.ts}'],
         synchronize: true, // Somente em desenvolvimento!
       }),
     }),
