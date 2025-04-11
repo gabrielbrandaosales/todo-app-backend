@@ -3,6 +3,7 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/gabrielbrandaosales/todo-app-backend?style=for-the-badge)
 ![GitHub language count](https://img.shields.io/github/languages/count/gabrielbrandaosales/todo-app-backend?style=for-the-badge)
 ![GitHub forks](https://img.shields.io/github/forks/gabrielbrandaosales/todo-app-backend?style=for-the-badge)
+
 <!--![Bitbucket open issues](https://img.shields.io/bitbucket/issues/gabrielbrandaosales/todo-app-backend?style=for-the-badge)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/gabrielbrandaosales/todo-app-backend?style=for-the-badge)-->
 
@@ -19,7 +20,7 @@
 
 - Persistência de dados em banco de dados
 
-- Documentação da API com Swagger 
+- Documentação da API com Swagger
 
 ### Ajustes e melhorias
 
@@ -28,8 +29,8 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Criar projeto NestJS
 - [x] Instalar e configurar TypeORM
 - [x] Configurar ENVS
-- [ ] Criar modulo ToDo
-- [ ] Criar entidade ToDo
+- [x] Criar modulo ToDo
+- [x] Criar entidade ToDo
 - [ ] CRUD ToDo
 - [ ] Criar Documentação Swagger
 
@@ -39,7 +40,7 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
 - Você instalou a versão mais recente de `<Node v18.18.0>`
 - Você tem uma máquina `<Windows>`.
-- Você leu `https://github.com/nestjs/nest`. 
+- Você leu `https://github.com/nestjs/nest`.
 
 ## 🚀 Instalando todo-app-backend
 
@@ -51,7 +52,7 @@ Para instalar o todo-app-backend, siga estas etapas:
 $ npm install
 ```
 
-## ☕ Compilar e iniciar o projeto 
+## ☕ Compilar e iniciar o projeto
 
 Para usar todo-app-backend, siga estas etapas:
 
@@ -66,7 +67,7 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## ✅ Executar testes 
+## ✅ Executar testes
 
 Para executar os testes, siga estas etapas:
 
@@ -130,11 +131,11 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
 
 <img src='https://github.com/gabrielbrandaosales.png' alt='Foto do autor' width='100px'/>
 
-<sub>Gabriel Brandão</sub> 
+<sub>Gabriel Brandão</sub>
 
 ## 😄 Seja um dos contribuidores
 
-Quer fazer parte desse projeto? Clique [AQUI](CONTRIBUTING.md) e leia como contribuir. 
+Quer fazer parte desse projeto? Clique [AQUI](CONTRIBUTING.md) e leia como contribuir.
 
 ## 📝 Licença
 
