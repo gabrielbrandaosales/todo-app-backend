@@ -14,7 +14,7 @@ export class TodoService {
     return await this.todoRepository.find();
   }
 
-  async findOne(id: string) {
+  async findOneOrFail(id: string) {
     try {
       return await this.todoRepository.findOneOrFail({ where: { id } });
     } catch (error) {
@@ -23,9 +23,19 @@ export class TodoService {
     }
   }
 
-  async create() {}
+  async create(data) {
+    return await this.todoRepository.save(this.todoRepository.create(data));
+  }
 
-  async update() {}
+  async update(id: string, data) {
+    const todo = await this.findOneOrFail(id);
 
-  async deleteById() {}
+    this.todoRepository.merge(todo, data);
+    return await this.todoRepository.save(todo);
+  }
+
+  async deleteById(id) {
+    await this.findOneOrFail(id);
+    await this.todoRepository.softDelete(id);
+  }
 }
