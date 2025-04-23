@@ -31,7 +31,8 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Configurar ENVS
 - [x] Criar modulo ToDo
 - [x] Criar entidade ToDo
-- [ ] CRUD ToDo
+- [x] CRUD ToDo
+- [ ] Criar body (data) type
 - [ ] Criar Documentação Swagger
 
 ## 💻 Pré-requisitos
