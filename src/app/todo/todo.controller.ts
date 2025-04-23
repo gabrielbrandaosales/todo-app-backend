@@ -1,3 +1,5 @@
+import { CreateTodoDTO } from './dto/create-todo.dto';
+import { UpdateTodoDTO } from './dto/update-todo.dto';
 import { TodoService } from './todo.service';
 import {
   Body,
@@ -22,7 +24,7 @@ export class TodoController {
   }
 
   @Post()
-  async create(@Body() body) {
+  async create(@Body() body: CreateTodoDTO) {
     return await this.todoService.create(body);
   }
 
@@ -32,7 +34,10 @@ export class TodoController {
   }
 
   @Put(':id')
-  async update(@Param('id', new ParseUUIDPipe()) id: string, @Body() body) {
+  async update(
+    @Param('id', new ParseUUIDPipe()) id: string,
+    @Body() body: UpdateTodoDTO,
+  ) {
     return await this.todoService.update(id, body);
   }
 

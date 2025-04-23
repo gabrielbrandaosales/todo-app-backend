@@ -32,9 +32,9 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Criar modulo ToDo
 - [x] Criar entidade ToDo
 - [x] CRUD ToDo
-- [ ] Validação endpoints
-- [ ] Criar body (data) type
+- [x] Validação endpoints
 - [ ] Criar Documentação Swagger
+- [ ] Criar Testes
 
 ## 💻 Pré-requisitos
 
