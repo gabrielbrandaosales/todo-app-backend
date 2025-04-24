@@ -33,7 +33,7 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Criar entidade ToDo
 - [x] CRUD ToDo
 - [x] Validação endpoints
-- [ ] Criar Documentação Swagger
+- [x] Criar Documentação Swagger
 - [ ] Criar Testes
 
 ## 💻 Pré-requisitos
