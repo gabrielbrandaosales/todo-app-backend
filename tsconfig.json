@@ -17,6 +17,9 @@
     "noImplicitAny": true,
     "strictNullChecks": true,
     "strictPropertyInitialization": false,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "paths": {
+      "src/*": ["./src/*"]
+    }
   }
 }
