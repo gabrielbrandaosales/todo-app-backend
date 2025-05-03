@@ -49,5 +49,13 @@ describe('TodoController', () => {
       //Assert
       expect(result).toEqual(todoEntityList);
     });
+
+    it('should throw an exception', async () => {
+      //Arrange
+      jest.spyOn(todoService, 'findAll').mockRejectedValueOnce(new Error());
+
+      //Assert
+      await expect(todoController.index()).rejects.toThrow('');
+    });
   });
 });
