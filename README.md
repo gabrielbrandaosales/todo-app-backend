@@ -34,8 +34,9 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] CRUD ToDo
 - [x] Validação endpoints
 - [x] Criar Documentação Swagger
-- [ ] Configuração do ambiente de testes com Jest no NestJS
-- [ ] Criação de testes para métodos dos controllers
+- [x] Configuração do ambiente de testes com Jest no NestJS
+- [x] Criação de testes para métodos dos controllers
+- [ ] Criação de testes para métodos dos services
 
 ## 💻 Pré-requisitos
 
