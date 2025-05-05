@@ -4,6 +4,7 @@ import { TodoController } from './todo.controller';
 import { TodoService } from './todo.service';
 import { TodoEntity } from './entity/todo.entity';
 import { CreateTodoDTO } from './dto/create-todo.dto';
+import { UpdateTodoDTO } from './dto/update-todo.dto';
 
 const todoEntityList: TodoEntity[] = [
   new TodoEntity({ id: '1', task: 'task-1', isDone: 0 }),
@@ -12,6 +13,8 @@ const todoEntityList: TodoEntity[] = [
 ];
 
 const newTodoEntity = new TodoEntity({ task: 'new-task', isDone: 0 });
+
+const updatedTodoEntity = new TodoEntity({ task: 'task-1', isDone: 1 });
 
 describe('TodoController', () => {
   let todoController: TodoController;
@@ -27,7 +30,7 @@ describe('TodoController', () => {
             findAll: jest.fn().mockResolvedValue(todoEntityList),
             create: jest.fn().mockResolvedValue(newTodoEntity),
             findOneOrFail: jest.fn().mockResolvedValue(todoEntityList[0]),
-            update: jest.fn(),
+            update: jest.fn().mockResolvedValue(updatedTodoEntity),
             deleteById: jest.fn(),
           },
         },
@@ -106,6 +109,30 @@ describe('TodoController', () => {
 
       //Assert
       await expect(todoController.show('1')).rejects.toThrow('');
+    });
+  });
+
+  describe('update', () => {
+    it('should update a todo item successfully', async () => {
+      //Arrange
+      const body: UpdateTodoDTO = { task: 'task-1', isDone: 1 };
+
+      // Act
+      const result = await todoController.update('1', body);
+
+      //Assert
+      expect(result).toEqual(updatedTodoEntity);
+      expect(todoService.update).toHaveBeenCalledTimes(1);
+      expect(todoService.update).toHaveBeenCalledWith('1', body);
+    });
+
+    it('should throw an exception', async () => {
+      //Arrange
+      const body: UpdateTodoDTO = { task: 'task-1', isDone: 1 };
+      jest.spyOn(todoService, 'update').mockRejectedValueOnce(new Error());
+
+      //Assert
+      await expect(todoController.update('1', body)).rejects.toThrow('');
     });
   });
 });
