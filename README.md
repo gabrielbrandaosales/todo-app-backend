@@ -10,7 +10,7 @@
 <a href='http://gabrielbrandao.vercel.app' target="_blank">
 <!-- <img src="/public/site-image.png" alt="Exemplo imagem"> -->
 </a>  
-> Este é um backend para uma aplicação de gerenciamento de tarefas (To-Do), desenvolvido com NestJS, TypeORRM e MariaDB. A API permite criar, listar, atualizar e excluir tarefas, oferecendo autenticação e persistência de dados.
+> Este é um backend para uma aplicação de gerenciamento de tarefas (To-Do), desenvolvido com NestJS, TypeORM e MariaDB. A API permite criar, listar, atualizar e excluir tarefas, oferecendo autenticação e persistência de dados.
 
 ### Recursos principais:
 
