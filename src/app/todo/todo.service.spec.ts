@@ -6,12 +6,18 @@ import { getRepositoryToken } from '@nestjs/typeorm';
 import { TodoEntity } from './entity/todo.entity';
 import { Repository } from 'typeorm';
 import { NotFoundException } from '@nestjs/common';
+import { CreateTodoDTO } from './dto/create-todo.dto';
 
 const todoEntityList: TodoEntity[] = [
   new TodoEntity({ task: 'task-1', isDone: 0 }),
   new TodoEntity({ task: 'task-2', isDone: 0 }),
   new TodoEntity({ task: 'task-3', isDone: 0 }),
 ];
+
+const newTodoItem = new TodoEntity({
+  task: 'new-task',
+  isDone: 0,
+});
 
 describe('TodoService', () => {
   let todoService: TodoService;
@@ -26,7 +32,7 @@ describe('TodoService', () => {
           useValue: {
             find: jest.fn().mockResolvedValue(todoEntityList),
             findOneOrFail: jest.fn().mockResolvedValue(todoEntityList[0]),
-            create: jest.fn(),
+            create: jest.fn().mockResolvedValue(newTodoItem),
             merge: jest.fn(),
             save: jest.fn(),
             softDelete: jest.fn(),
@@ -83,6 +89,31 @@ describe('TodoService', () => {
 
       //Assert
       expect(todoService.findOneOrFail('1')).rejects.toThrow(NotFoundException);
+    });
+  });
+
+  describe('create', () => {
+    it('should return a todo entity item successfully', async () => {
+      // Arrange
+      const body: CreateTodoDTO = { task: 'new-task', isDone: 0 };
+      jest.spyOn(todoRepository, 'create').mockReturnValue(body as TodoEntity);
+      jest.spyOn(todoRepository, 'save').mockResolvedValue(newTodoItem);
+
+      // Act
+      const result = await todoService.create(body);
+
+      // Assert
+      expect(result).toEqual(newTodoItem);
+      expect(todoRepository.create).toHaveBeenCalledTimes(1);
+    });
+
+    it('should throw an exeception', () => {
+      // Arrange
+      const body: CreateTodoDTO = { task: 'new-task', isDone: 0 };
+      jest.spyOn(todoService, 'create').mockRejectedValueOnce(new Error());
+
+      // Assert
+      expect(todoService.create(body)).rejects.toThrow('');
     });
   });
 });
