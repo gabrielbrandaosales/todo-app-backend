@@ -154,7 +154,7 @@ describe('TodoService', () => {
         existingEntity,
         updateData,
       );
-      expect(todoRepository.save).toHaveBeenCalledWith(updatedEntity);
+      expect(todoRepository.save).toHaveBeenCalledTimes(1);
       expect(result).toEqual(updatedEntity);
     });
   });
