@@ -35,7 +35,7 @@ describe('TodoService', () => {
             create: jest.fn().mockResolvedValue(newTodoItem),
             merge: jest.fn(),
             save: jest.fn(),
-            softDelete: jest.fn(),
+            delete: jest.fn(),
           },
         },
       ],
@@ -114,6 +114,48 @@ describe('TodoService', () => {
 
       // Assert
       expect(todoService.create(body)).rejects.toThrow('');
+    });
+  });
+
+  describe('update', () => {
+    it('should update and return the updated todo entity successfully', async () => {
+      // Arrange
+      const id = '1';
+      const updateData = { task: 'updated-task', isDone: 1 };
+      const existingEntity = new TodoEntity({
+        id: '1',
+        task: 'old-task',
+        isDone: 0,
+        createdAt: '',
+        updatedAt: '',
+        deletedAt: '',
+      });
+      const updatedEntity = {
+        ...existingEntity,
+        ...updateData,
+        updatedAt: String(new Date()),
+      };
+
+      // Mocking the repository methods
+      jest
+        .spyOn(todoRepository, 'findOneOrFail')
+        .mockResolvedValue(existingEntity);
+      jest.spyOn(todoRepository, 'merge').mockReturnValue(updatedEntity);
+      jest.spyOn(todoRepository, 'save').mockResolvedValue(updatedEntity);
+
+      // Act
+      const result = await todoService.update(id, updateData);
+
+      // Assert
+      expect(todoRepository.findOneOrFail).toHaveBeenCalledWith({
+        where: { id },
+      });
+      expect(todoRepository.merge).toHaveBeenCalledWith(
+        existingEntity,
+        updateData,
+      );
+      expect(todoRepository.save).toHaveBeenCalledTimes(1);
+      expect(result).toEqual(updatedEntity);
     });
   });
 });
