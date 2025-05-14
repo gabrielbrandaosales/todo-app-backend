@@ -24,22 +24,24 @@ export class TodoEntity {
 
   @CreateDateColumn({ name: 'created_at' })
   @ApiProperty()
-  createdAt: string;
+  createdAt: Date;
 
   @UpdateDateColumn({ name: 'updated_at' })
   @ApiProperty()
-  updatedAt: string;
+  updatedAt: Date;
 
   @DeleteDateColumn({ name: 'deleted_at' })
   @ApiProperty()
-  deletedAt: string;
+  deletedAt: Date | null;
 
   constructor(todo?: Partial<TodoEntity>) {
-    this.id = todo?.id || '';
-    this.task = todo?.task || '';
-    this.isDone = todo?.isDone || 0;
-    this.createdAt = todo?.createdAt || '';
-    this.updatedAt = todo?.updatedAt || '';
-    this.deletedAt = todo?.deletedAt || '';
+    if (todo) {
+      this.id = todo.id ?? '';
+      this.task = todo.task ?? '';
+      this.isDone = todo.isDone ?? 0;
+      this.createdAt = todo.createdAt ?? new Date();
+      this.updatedAt = todo.updatedAt ?? new Date();
+      this.deletedAt = todo.deletedAt ?? null;
+    }
   }
 }
