@@ -126,14 +126,14 @@ describe('TodoService', () => {
         id: '1',
         task: 'old-task',
         isDone: 0,
-        createdAt: '',
-        updatedAt: '',
-        deletedAt: '',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        deletedAt: null,
       });
       const updatedEntity = {
         ...existingEntity,
         ...updateData,
-        updatedAt: String(new Date()),
+        updatedAt: new Date(),
       };
 
       // Mocking the repository methods
