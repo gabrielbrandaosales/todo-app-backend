@@ -36,7 +36,7 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Criar Documentação Swagger
 - [x] Configuração do ambiente de testes com Jest no NestJS
 - [x] Criação de testes para métodos dos controllers
-- [ ] Criação de testes para métodos dos services
+- [x] Criação de testes para métodos dos services
 
 ## 💻 Pré-requisitos
 
