@@ -5,6 +5,7 @@ import { TodoModule } from './app/todo/todo.module';
 
 @Module({
   imports: [
+    ConfigModule.forRoot(),
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
       inject: [ConfigService],
@@ -15,14 +16,11 @@ import { TodoModule } from './app/todo/todo.module';
         username: configService.get('DB_USERNAME', 'root'),
         password: configService.get('DB_PASSWORD', '123'),
         database: configService.get('DB_DATABASE', 'todo_database'),
-        autoLoadEntities: true,
         entities: [__dirname + '/**/*.entity{.js,.ts}'],
-        synchronize: true, // Somente em desenvolvimento!
+        synchronize: true, // Remove in production!
       }),
     }),
     TodoModule,
   ],
-  controllers: [],
-  providers: [],
 })
 export class AppModule {}
