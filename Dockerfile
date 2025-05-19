@@ -1,8 +1,8 @@
-# Etapa 1: build
-FROM node:18-alpine AS builder
+FROM node:18-alpine
 
 WORKDIR /app
 
+# Copy backend files
 COPY package*.json ./
 RUN npm install
 
@@ -10,15 +10,6 @@ COPY . .
 
 RUN npm run build
 
-# Etapa 2: imagem final
-FROM node:18-alpine
+EXPOSE 3000
 
-WORKDIR /app
-
-COPY --from=builder /app/dist ./dist
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/package.json ./
-
-EXPOSE 3001
-
-CMD ["node", "dist/main"]
+CMD ["npm", "run", "start:prod"]
