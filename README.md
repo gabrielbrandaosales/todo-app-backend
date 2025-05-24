@@ -9,7 +9,7 @@
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
 - [ ] Adotar um pnpm workspaces ou npm workspaces
-- [ ] Criar um diretório packages/
+- [x] Criar um diretório packages/
 - [ ] Centralizar o tsconfig.base.json no root
 - [ ] Organizar scripts e ferramentas
 - [ ] Iniciar frontend
