@@ -12,7 +12,7 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Criar um diretório packages/
 - [ ] Centralizar o tsconfig.base.json no root
 - [ ] Organizar scripts e ferramentas
-- [ ] Iniciar frontend
+- [x] Iniciar frontend
 
 Projeto de estudo estruturado em monorepo, com backend desenvolvido em NestJS e frontend em React utilizando Vite para build rápido e eficiente.
 
@@ -25,8 +25,3 @@ Monorepo: Organização unificada para facilitar o desenvolvimento, versionament
 Docker: Contêineres configurados para backend e frontend, garantindo ambiente isolado e consistente para desenvolvimento e deploy.
 
 Objetivo: prática de arquitetura monorepo, integração entre backend e frontend modernos, uso de Docker para simplificar o setup e aplicação das melhores práticas em TypeScript.
-
-
-
-
-
