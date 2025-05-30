@@ -18,13 +18,15 @@ html {
 }
 
 body {
-  margin: 0;
-  background-color: var(--gray-600);
+  display: grid;
+  justify-content: center;
+
+  min-height: 100vh;
+
+  margin: 0 auto;
 }
 
-/* #root {
-  max-width: 1280px;
+#root {
+  width: 100vw;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-} */
+}
