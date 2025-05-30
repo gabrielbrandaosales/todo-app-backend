@@ -1,0 +1,57 @@
+.container {
+  content: '';
+  position: relative;
+
+  top: -27px;
+
+  display: flex;
+  flex-direction: row;
+
+  max-width: 740px;
+
+  margin: 0 auto;
+
+  gap: 8px;
+}
+
+.taskBar {
+  display: inline-block;
+  width: 100%;
+
+  border-radius: 8px;
+  border: 1px solid var(--gray-700);
+
+  padding: 16px;
+
+  background-color: var(--gray-500);
+
+  color: var(--gray-300);
+
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0%;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+  border-radius: 8px;
+  border: none;
+
+  font-size: 14px;
+
+  width: 9rem;
+  height: 52px;
+
+  background-color: var(--blue-dark);
+
+  font-family: Inter;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 140%;
+  letter-spacing: 0%;
+}
