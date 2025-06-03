@@ -1,21 +1,29 @@
+import { GoTrash } from 'react-icons/go';
 import './styles.css';
 
 const NewTask = () => {
   return (
-    <div className="item">
-      <div className="checkbox-wrapper-18">
-        <div className="round">
-          <input type="checkbox" id="checkbox-18" />
-          <label htmlFor="checkbox-18"></label>
-        </div>
-      </div>
-
+    <div className="checkbox-wrapper-15 item">
       <input
-        className="title"
-        type="text"
-        placeholder="Adicione uma nova tarefa"
+        className="inp-cbx"
+        id="cbx-15"
+        type="checkbox"
+        style={{ display: 'none' }}
       />
-      <button>Excluir</button>
+      <label className="cbx" htmlFor="cbx-15">
+        <span>
+          <svg width="12px" height="9px" viewBox="0 0 12 9">
+            <polyline points="1 5 4 8 11 1"></polyline>
+          </svg>
+        </span>
+        <span>To-do</span>
+      </label>
+      <button
+        aria-label="Excluir tarefa"
+        title="Excluir tarefa"
+        className="btn-trash">
+        <GoTrash size={14} />
+      </button>
     </div>
   );
 };
