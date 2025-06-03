@@ -34,7 +34,7 @@
   letter-spacing: 0%;
 }
 
-.btn {
+.btn-create {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -54,4 +54,10 @@
   font-size: 14px;
   line-height: 140%;
   letter-spacing: 0%;
+
+  cursor: pointer;
+}
+
+.btn-create:hover {
+  background-color: var(--blue);
 }

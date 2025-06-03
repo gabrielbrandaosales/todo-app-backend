@@ -9,7 +9,7 @@ const NewTaskBar = () => {
         type="text"
         placeholder="Adicione uma nova tarefa"
       />
-      <button className="btn">
+      <button className="btn-create">
         Criar <CiCirclePlus size={16} />
       </button>
     </div>
