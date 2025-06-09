@@ -8,12 +8,16 @@ async function bootstrap() {
 
   const config = new DocumentBuilder()
     .setTitle('To Do App API')
-    .setVersion('0.0.1')
+    .setVersion('0.0.2')
     .build();
   const documentFactory = () => SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('swagger', app, documentFactory);
 
+  app.enableCors({
+    origin: 'http://localhost:5173',
+    credentials: true, // só se você for usar login, sessões etc.
+  });
   app.useGlobalPipes(new ValidationPipe());
-  await app.listen(process.env.PORT ?? 3001);
+  await app.listen(process.env.PORT ?? 3001, '0.0.0.0');
 }
 bootstrap();
