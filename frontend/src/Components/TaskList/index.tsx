@@ -28,9 +28,9 @@ const Tasks = () => {
         </div>
       </nav>
 
-      {/* <NewTask description="Nova tarefa" isDone={false} /> */}
+      {/* <NewTask task="Nova tarefa" isDone={false} /> */}
       {data?.map((task: TaskProps, index: number) => (
-        <NewTask key={index} task={task.task} isDone={task.isDone} />
+        <NewTask key={index} task={task.task} isDone={task.isDone} id={index} />
       ))}
     </main>
   );

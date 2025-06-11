@@ -5,9 +5,10 @@ import { useState } from 'react';
 export interface TaskProps {
   task: string;
   isDone: boolean;
+  id?: number;
 }
 
-const NewTask = ({ task: description, isDone }: TaskProps) => {
+const NewTask = ({ task: description, isDone, id }: TaskProps) => {
   const [isChecked, setIsChecked] = useState(isDone);
 
   const handleCheckboxChange = () => {
@@ -20,11 +21,11 @@ const NewTask = ({ task: description, isDone }: TaskProps) => {
         <div className="round">
           <input
             type="checkbox"
-            id="checkbox-18"
+            id={`checkbox-${id}`}
             checked={isChecked}
             onChange={handleCheckboxChange}
           />
-          <label htmlFor="checkbox-18"></label>
+          <label htmlFor={`checkbox-${id}`}></label>
         </div>
       </div>
       <label
