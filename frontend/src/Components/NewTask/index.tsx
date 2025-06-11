@@ -1,22 +1,41 @@
 import { GoTrash } from 'react-icons/go';
 import './styles.css';
 import { useState } from 'react';
+import axios from 'axios';
 
 export interface TaskProps {
+  id?: number;
   task: string;
   isDone: boolean;
-  id?: number;
 }
 
 const NewTask = ({ task: description, isDone, id }: TaskProps) => {
   const [isChecked, setIsChecked] = useState(isDone);
 
-  const handleCheckboxChange = () => {
-    setIsChecked(!isChecked);
+  const handleCheckboxChange = async () => {
+    const newValue = !isChecked;
+    setIsChecked(newValue);
+
+    try {
+      await axios.put(`http://localhost:3001/api/v1/todos/${id}`, {
+        task: description,
+        isDone: Number(newValue),
+      });
+      console.log('Task atualizada com sucesso!');
+    } catch (error) {
+      console.error('Erro ao atualizar a tarefa:', error);
+      // Reverte o estado se o request falhar
+      setIsChecked(!newValue);
+    }
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log(description);
   };
 
   return (
-    <div className="item">
+    <form onSubmit={handleSubmit} className="item">
       <div className="checkbox-wrapper-18">
         <div className="round">
           <input
@@ -40,7 +59,7 @@ const NewTask = ({ task: description, isDone, id }: TaskProps) => {
         className="btn-trash">
         <GoTrash size={16} />
       </button>
-    </div>
+    </form>
   );
 };
 
