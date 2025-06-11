@@ -39,9 +39,6 @@ const NewTask = ({ task: description, isDone, id }: TaskProps) => {
   };
 
   const handleDelete = async () => {
-    // setIsEditing(false);
-    // setEditedTask(initialTask);
-    // setIsChecked(isDone);
     console.log('Cancelar edição');
     try {
       await axios.delete(`http://localhost:3001/api/v1/todos/${id}`);
