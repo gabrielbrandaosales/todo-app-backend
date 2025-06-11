@@ -2,8 +2,13 @@ import { GoTrash } from 'react-icons/go';
 import './styles.css';
 import { useState } from 'react';
 
-const NewTask = () => {
-  const [isChecked, setIsChecked] = useState(false);
+export interface TaskProps {
+  task: string;
+  isDone: boolean;
+}
+
+const NewTask = ({ task: description, isDone }: TaskProps) => {
+  const [isChecked, setIsChecked] = useState(isDone);
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
@@ -16,6 +21,7 @@ const NewTask = () => {
           <input
             type="checkbox"
             id="checkbox-18"
+            checked={isChecked}
             onChange={handleCheckboxChange}
           />
           <label htmlFor="checkbox-18"></label>
@@ -25,8 +31,7 @@ const NewTask = () => {
         className={
           isChecked ? `task-description lineThrough` : `task-description`
         }>
-        Integer urna interdum massa libero auctor neque turpis turpis semper.
-        Duis vel sed fames integer.
+        {description}
       </label>
       <button
         aria-label="Excluir tarefa"
