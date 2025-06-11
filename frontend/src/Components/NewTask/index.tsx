@@ -12,6 +12,10 @@ export interface TaskProps {
 const NewTask = ({ task: description, isDone, id }: TaskProps) => {
   const [isChecked, setIsChecked] = useState(isDone);
 
+  const reloadPage = () => {
+    window.location.reload();
+  };
+
   const handleCheckboxChange = async () => {
     const newValue = !isChecked;
     setIsChecked(newValue);
@@ -22,9 +26,9 @@ const NewTask = ({ task: description, isDone, id }: TaskProps) => {
         isDone: Number(newValue),
       });
       console.log('Task atualizada com sucesso!');
+      reloadPage();
     } catch (error) {
       console.error('Erro ao atualizar a tarefa:', error);
-      // Reverte o estado se o request falhar
       setIsChecked(!newValue);
     }
   };
@@ -32,6 +36,20 @@ const NewTask = ({ task: description, isDone, id }: TaskProps) => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(description);
+  };
+
+  const handleDelete = async () => {
+    // setIsEditing(false);
+    // setEditedTask(initialTask);
+    // setIsChecked(isDone);
+    console.log('Cancelar edição');
+    try {
+      await axios.delete(`http://localhost:3001/api/v1/todos/${id}`);
+      console.log('Task excluída com sucesso!');
+      reloadPage();
+    } catch (error) {
+      console.error('Erro ao excluir a tarefa:', error);
+    }
   };
 
   return (
@@ -54,6 +72,8 @@ const NewTask = ({ task: description, isDone, id }: TaskProps) => {
         {description}
       </label>
       <button
+        type="button"
+        onClick={handleDelete}
         aria-label="Excluir tarefa"
         title="Excluir tarefa"
         className="btn-trash">
