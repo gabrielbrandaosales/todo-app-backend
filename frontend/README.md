@@ -58,7 +58,7 @@ export default tseslint.config({
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
 - [x] Conectar com o backend
-- [ ] Editar tarefas com API (PUT)
+- [x] Editar tarefas com API (PUT)
 - [ ] Skelleton loading
 - [ ] Ajustar barra de nova tarefa
 - [ ] Mobile Responsive
