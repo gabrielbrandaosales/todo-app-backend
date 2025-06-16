@@ -14,8 +14,8 @@ async function bootstrap() {
   SwaggerModule.setup('swagger', app, documentFactory);
 
   app.enableCors({
-    origin: 'http://localhost:5173',
-    credentials: true, // só se você for usar login, sessões etc.
+    origin: 'http://localhost',
+    credentials: true,
   });
   app.useGlobalPipes(new ValidationPipe());
   await app.listen(process.env.PORT ?? 3001, '0.0.0.0');
