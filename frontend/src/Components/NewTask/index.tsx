@@ -1,6 +1,6 @@
 import { GoTrash } from 'react-icons/go';
 import './styles.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 export interface TaskProps {
@@ -11,9 +11,19 @@ export interface TaskProps {
 
 const NewTask = ({ task: description, isDone, id }: TaskProps) => {
   const [isChecked, setIsChecked] = useState(isDone);
+  const [isEditing, setIsEditing] = useState(false);
+  const [editedTask, setEditedTask] = useState(description);
 
   const reloadPage = () => {
     window.location.reload();
+  };
+
+  const handleEditClick = () => {
+    setIsEditing(true);
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEditedTask(e.target.value);
   };
 
   const handleCheckboxChange = async () => {
@@ -33,9 +43,24 @@ const NewTask = ({ task: description, isDone, id }: TaskProps) => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(description);
+
+    try {
+      await axios.put(`http://localhost:3001/api/v1/todos/${id}`, {
+        task: editedTask,
+        isDone: isDone,
+      });
+      console.log('Task atualizada com sucesso!');
+      reloadPage();
+    } catch (error) {
+      console.error('Erro ao atualizar a tarefa:', error);
+      setIsEditing(false);
+      setEditedTask(description);
+      setIsChecked(isDone);
+    }
+
+    setIsEditing(false);
   };
 
   const handleDelete = async () => {
@@ -48,6 +73,25 @@ const NewTask = ({ task: description, isDone, id }: TaskProps) => {
       console.error('Erro ao excluir a tarefa:', error);
     }
   };
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsEditing(false);
+        setEditedTask(description);
+        setIsChecked(isDone);
+      }
+    };
+
+    if (isEditing) {
+      window.addEventListener('keydown', handleKeyDown);
+    }
+
+    // Limpeza do event listener ao sair do modo de edição
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [description, isDone, isEditing]);
 
   return (
     <form onSubmit={handleSubmit} className="item">
@@ -62,12 +106,39 @@ const NewTask = ({ task: description, isDone, id }: TaskProps) => {
           <label htmlFor={`checkbox-${id}`}></label>
         </div>
       </div>
-      <label
+
+      {isEditing ? (
+        <>
+          <input
+            value={editedTask}
+            onChange={handleInputChange}
+            className="edit-input"
+            autoFocus
+          />
+        </>
+      ) : (
+        <>
+          <button
+            type="button"
+            onClick={handleEditClick}
+            className="btn-select-to-edit"
+            title="Editar tarefa">
+            <label
+              className={
+                isChecked ? `task-description lineThrough` : `task-description`
+              }>
+              {editedTask}
+            </label>
+          </button>
+        </>
+      )}
+
+      {/* <label
         className={
           isChecked ? `task-description lineThrough` : `task-description`
         }>
         {description}
-      </label>
+      </label> */}
       <button
         type="button"
         onClick={handleDelete}
