@@ -11,7 +11,7 @@ const TaskListSkeleton = () => {
             <Skeleton width={100} />
           </label>
           <span className="task-quantity">
-            <Skeleton width={20} />
+            <Skeleton width={10} baseColor="#333" highlightColor="#262626" />
           </span>
         </div>
         <Skeleton />
@@ -21,11 +21,14 @@ const TaskListSkeleton = () => {
             <Skeleton width={100} />
           </label>
           <span className="task-quantity">
-            <Skeleton width={35} />
+            <Skeleton width={35} baseColor="#333" highlightColor="#262626" />
           </span>
         </div>
       </nav>
-      <Skeleton width={740} height={50} count={5} />
+      <Skeleton className="item" width={707} height={30} />
+      <Skeleton className="item" width={707} height={30} />
+      <Skeleton className="item" width={707} height={30} />
+      <Skeleton className="item" width={707} height={30} />
     </main>
   );
 };

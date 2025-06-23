@@ -39,6 +39,22 @@
   color: var(--blue);
 }
 
+.item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  max-width: 740px;
+  gap: 12px;
+  border-radius: 8px;
+  border-width: 1px;
+  padding: 16px;
+
+  background: var(--gray-500);
+
+  border: 1px solid var(--gray-400);
+}
+
 .task-quantity {
   font-family: Inter;
   font-weight: 700;

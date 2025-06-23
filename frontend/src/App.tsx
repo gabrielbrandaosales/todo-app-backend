@@ -11,7 +11,7 @@ const queryClient = new QueryClient();
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <SkeletonTheme baseColor="#b7b7b7">
+      <SkeletonTheme baseColor="#333" highlightColor="#262626">
         <div className="App">
           <Header />
           <NewTaskBar />
