@@ -13,6 +13,7 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [ ] Centralizar o tsconfig.base.json no root
 - [ ] Organizar scripts e ferramentas
 - [x] Iniciar frontend
+- [ ] Deploy em Render
 
 Projeto de estudo estruturado em monorepo, com backend desenvolvido em NestJS e frontend em React utilizando Vite para build rápido e eficiente.
 
