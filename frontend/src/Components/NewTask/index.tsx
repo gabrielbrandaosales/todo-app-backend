@@ -7,16 +7,13 @@ export interface TaskProps {
   id?: number;
   task: string;
   isDone: boolean;
+  refetch: () => void;
 }
 
-const NewTask = ({ task: description, isDone, id }: TaskProps) => {
+const NewTask = ({ task: description, isDone, id, refetch }: TaskProps) => {
   const [isChecked, setIsChecked] = useState(isDone);
   const [isEditing, setIsEditing] = useState(false);
   const [editedTask, setEditedTask] = useState(description);
-
-  const reloadPage = () => {
-    window.location.reload();
-  };
 
   const handleEditClick = () => {
     setIsEditing(true);
@@ -36,7 +33,7 @@ const NewTask = ({ task: description, isDone, id }: TaskProps) => {
         isDone: Number(newValue),
       });
       console.log('Task atualizada com sucesso!');
-      reloadPage();
+      refetch();
     } catch (error) {
       console.error('Erro ao atualizar a tarefa:', error);
       setIsChecked(!newValue);
@@ -52,7 +49,7 @@ const NewTask = ({ task: description, isDone, id }: TaskProps) => {
         isDone: isDone,
       });
       console.log('Task atualizada com sucesso!');
-      reloadPage();
+      refetch();
     } catch (error) {
       console.error('Erro ao atualizar a tarefa:', error);
       setIsEditing(false);
@@ -68,7 +65,7 @@ const NewTask = ({ task: description, isDone, id }: TaskProps) => {
     try {
       await axios.delete(`http://localhost:3001/api/v1/todos/${id}`);
       console.log('Task excluída com sucesso!');
-      reloadPage();
+      refetch();
     } catch (error) {
       console.error('Erro ao excluir a tarefa:', error);
     }
