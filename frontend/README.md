@@ -59,6 +59,6 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 
 - [x] Conectar com o backend
 - [x] Editar tarefas com API (PUT)
-- [ ] Skelleton loading
+- [x] Skeleton loading
 - [ ] Ajustar barra de nova tarefa
 - [ ] Mobile Responsive
