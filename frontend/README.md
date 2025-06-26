@@ -1,6 +1,6 @@
 # 🎨 Frontend – ToDo Project
 
-Interface web do projeto ToDo, desenvolvida com **React** e **Vite**. Essa aplicação consome a API RESTful criada em NestJS e permite ao usuário criar, visualizar, atualizar e excluir tarefas.
+Interface web do projeto ToDo, desenvolvida com **React** e **Vite**, com foco em simplicidade, desempenho e componentização. Essa SPA consome a API RESTful do backend NestJS para gerenciar tarefas de forma intuitiva e responsiva.
 
 ![Frontend Preview](./public/frontendpreview.png)
 
@@ -12,17 +12,16 @@ Interface web do projeto ToDo, desenvolvida com **React** e **Vite**. Essa aplic
 - [Vite](https://vitejs.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Axios](https://axios-http.com/)
-- [React Hooks](https://reactjs.org/docs/hooks-intro.html)
+- [ESLint](https://eslint.org/)
+- [Nginx (build)](https://www.nginx.com/)
+- [Docker](https://www.docker.com/)
 
 ---
 
 ## 🚀 Como rodar o projeto
 
-Certifique-se de que o backend está rodando antes de iniciar o frontend.
+### 🐳 Usando Docker (recomendado)
 
 ```bash
-# Instale as dependências
-npm install
-
-# Inicie o projeto
-npm run dev
+docker build -t todo-frontend .
+docker run -p 5173:80 todo-frontend
