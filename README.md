@@ -5,7 +5,7 @@
 ![GitHub forks](https://img.shields.io/github/forks/gabrielbrandaosales/todo-project?style=for-the-badge)
 
 <img src="/frontend/public/frontendpreview.png" alt="Exemplo imagem">
-> Este é o meu portfólio, que reúne minhas experiências profissionais, projetos pessoais e minha formação acadêmica.
+> Projeto fullstack desenvolvido como um boilerplate pessoal para aplicações modernas. A arquitetura é composta por um frontend em React com Vite, e um backend em NestJS utilizando TypeORM e MariaDB, com toda a stack orquestrada via Docker.
 
 ### Ajustes e melhorias
 
