@@ -4,6 +4,9 @@
 ![GitHub language count](https://img.shields.io/github/languages/count/gabrielbrandaosales/todo-project?style=for-the-badge)
 ![GitHub forks](https://img.shields.io/github/forks/gabrielbrandaosales/todo-project?style=for-the-badge)
 
+<img src="/frontend/public/frontendpreview.png" alt="Exemplo imagem">
+> Este é o meu portfólio, que reúne minhas experiências profissionais, projetos pessoais e minha formação acadêmica.
+
 ### Ajustes e melhorias
 
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
