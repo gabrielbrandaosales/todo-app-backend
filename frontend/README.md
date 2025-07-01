@@ -44,7 +44,7 @@ http://localhost:5173
 Este projeto ainda está em desenvolvimento e novas funcionalidades e ajustes estão sendo planejados para melhorar a experiência do usuário, a organização do código e a estrutura do monorepo:
 
 - [ ] Mobile version
-
+- [ ] Adicionar testes unitários com Jest e React Testing Library
 ---
 
 
