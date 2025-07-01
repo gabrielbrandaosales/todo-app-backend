@@ -39,6 +39,16 @@ npm run dev
 A aplicação estará disponível em:
 http://localhost:5173
 
+## 🚧 Melhorias Futuras
+
+Este projeto ainda está em desenvolvimento e novas funcionalidades e ajustes estão sendo planejados para melhorar a experiência do usuário, a organização do código e a estrutura do monorepo:
+
+- [ ] Mobile version
+
+---
+
+
+
 ### 📂 Estrutura
 ```frontend/
 ├── public/                # Assets públicos (favicon, imagens)
